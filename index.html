@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rathenesh S G | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
   <meta name="description" content="Portfolio of Rathenesh S G - Developer, Designer, Creator" />
 </head>
 <body>
@@ -69,11 +70,15 @@
               </p>
               <h3>Technical Skills</h3>
               <ul class="skills">
-                <li>Python</li>
-                <li>HTML, PHP, CSS, SQL-XAMPP</li>
-                <li>Java</li>
-                <li>C#</li>
-                <li>Unity Game Engine</li>
+                <li><i class="devicon-python-plain colored skill-icon" aria-hidden="true"></i><span>Python</span></li>
+                <li><i class="devicon-html5-plain colored skill-icon" aria-hidden="true"></i><span>HTML</span></li>
+                <li><i class="devicon-css3-plain colored skill-icon" aria-hidden="true"></i><span>CSS</span></li>
+                <li><i class="devicon-php-plain colored skill-icon" aria-hidden="true"></i><span>PHP</span></li>
+                <li><i class="devicon-mysql-original colored skill-icon" aria-hidden="true"></i><span>MySQL</span></li>
+                <li><i class="devicon-apache-plain colored skill-icon" aria-hidden="true"></i><span>XAMPP</span></li>
+                <li><i class="devicon-java-plain colored skill-icon" aria-hidden="true"></i><span>Java</span></li>
+                <li><i class="devicon-csharp-plain colored skill-icon" aria-hidden="true"></i><span>C#</span></li>
+                <li><i class="devicon-unity-plain colored skill-icon" aria-hidden="true"></i><span>Unity Game Engine</span></li>
               </ul>
               <h3>Soft Skills</h3>
               <ul class="skills">
@@ -82,6 +87,28 @@
               </ul>
             </div>
             <div>
+              <h3>Core Development Stack</h3>
+              <div class="tech-stack-box">
+                <div class="core-tech">
+                  <div class="core-item">
+                    <i class="devicon-csharp-plain colored" aria-hidden="true"></i>
+                    <span>C#</span>
+                  </div>
+                  <div class="core-item">
+                    <i class="devicon-unity-plain colored" aria-hidden="true"></i>
+                    <span>Unity</span>
+                  </div>
+                  <div class="core-item">
+                    <i class="devicon-python-plain colored" aria-hidden="true"></i>
+                    <span>Python</span>
+                  </div>
+                  <div class="core-item">
+                    <i class="devicon-java-plain colored" aria-hidden="true"></i>
+                    <span>Java</span>
+                  </div>
+                </div>
+              </div>
+
               <h3>Languages</h3>
               <ul class="skills">
                 <li>Tamil</li>
@@ -111,6 +138,12 @@
           <div class="project-grid">
           <div class="project-card">
             <h3>Inventory Management System</h3>
+            <div class="project-tech-icons" aria-label="Technologies used">
+              <i class="devicon-html5-plain colored" aria-hidden="true"></i>
+              <i class="devicon-css3-plain colored" aria-hidden="true"></i>
+              <i class="devicon-php-plain colored" aria-hidden="true"></i>
+              <i class="devicon-mysql-original colored" aria-hidden="true"></i>
+            </div>
             <ul class="project-meta">
               <li><b>Duration:</b> Jan 2025 – Apr 2025</li>
               <li><b>Team Size:</b> 1</li>
@@ -123,7 +156,7 @@
                 Server: XAMPP
               </li>
             </ul>
-            <p>Developed a system to manage shop stocks efficiently.</p>
+            <p class="project-impact">📈 Reduced manual stock tracking effort by 60% and automated inventory updates.</p>
             <a
               href="https://github.com/S-G-Rathenesh/INVENTORY-MANAGEMENT-SYSTEM"
               class="btn"
@@ -132,8 +165,17 @@
             >View Source Code</a>
           </div>
 
-          <div class="project-card">
+          <div class="project-card featured-project">
+            <span class="project-badge ai">⭐ Featured Project</span>
             <h3>AI-Enabled Resume & Portfolio Builder</h3>
+            <div class="project-tech-icons" aria-label="Technologies used">
+              <i class="devicon-html5-plain colored" aria-hidden="true"></i>
+              <i class="devicon-css3-plain colored" aria-hidden="true"></i>
+              <i class="devicon-javascript-plain colored" aria-hidden="true"></i>
+              <i class="devicon-php-plain colored" aria-hidden="true"></i>
+              <i class="devicon-mysql-original colored" aria-hidden="true"></i>
+            </div>
+            <span class="ai-indicator">AI Powered</span>
             <ul class="project-meta">
               <li><b>Duration:</b> July 2025 – Nov 2025</li>
               <li><b>Team Size:</b> 1</li>
@@ -147,7 +189,7 @@
                 Libraries: PDF Parser, PHPWord
               </li>
             </ul>
-            <p>Built a tool to generate resumes and portfolio content with AI assistance.</p>
+            <p class="project-impact">⚡ Reduced resume creation time from hours to minutes using AI automation.</p>
             <a
               href="https://github.com/S-G-Rathenesh/AI-Enabled-Resume-Portfolio-Builder"
               class="btn"
@@ -158,6 +200,9 @@
 
           <div class="project-card">
             <h3>FillPill: Smart Medication Reminder</h3>
+            <div class="project-tech-icons" aria-label="Technologies used">
+              <i class="devicon-arduino-plain colored" aria-hidden="true"></i>
+            </div>
             <ul class="project-meta">
               <li><b>Type:</b> Hardware Project</li>
               <li><b>Code:</b> Arduino </li>
@@ -180,13 +225,16 @@
       <div class="container">
         <div class="section-card">
           <h2>Internship</h2>
-          <div class="internship-card">
-            <ul class="project-meta">
-              <li><b>Company:</b> HDLC Technologies</li>
-              <li><b>Tools:</b> Jupyter Notebook, Google Colab</li>
-              <li><b>Duration:</b> 15 days</li>
-              <li><b>Role:</b> AI Developer</li>
-            </ul>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h3>HDLC Technologies</h3>
+                <p><strong>Role:</strong> AI Developer</p>
+                <p><strong>Duration:</strong> 15 Days</p>
+                <p><strong>Tools:</strong> Jupyter Notebook, Google Colab</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
