@@ -1,4 +1,4 @@
-﻿(() => {
+(() => {
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const root = document.documentElement;
 
@@ -206,32 +206,78 @@
     revealEls.forEach(el => el.classList.add('visible'));
   }
 
-  // Nav active underline
-  const navLinks = Array.from(document.querySelectorAll('.nav-list a[href^="#"], .nav-links a[href^="#"]'));
-  const sections = navLinks
-    .map(a => document.querySelector(a.getAttribute('href')))
-    .filter(Boolean);
+  // Nav active underline (anchor nav + robust scroll-spy)
+  (() => {
+    const navLinks = Array.from(document.querySelectorAll('.nav-list a[href^="#"]'));
+    if (!navLinks.length) return;
 
-  function setActiveLink(id) {
-    navLinks.forEach(a => {
-      const href = a.getAttribute('href');
-      if (href === `#${id}`) a.classList.add('is-active');
-      else a.classList.remove('is-active');
-    });
-  }
+    const sections = navLinks
+      .map((link) => {
+        const href = link.getAttribute('href') || '';
+        if (!href.startsWith('#')) return null;
+        const id = decodeURIComponent(href.slice(1));
+        return id ? document.getElementById(id) : null;
+      })
+      .filter(Boolean);
 
-  if ('IntersectionObserver' in window && sections.length) {
-    const navIO = new IntersectionObserver((entries) => {
-      const visible = entries
-        .filter(e => e.isIntersecting)
-        .sort((a, b) => (b.intersectionRatio - a.intersectionRatio));
-      if (!visible.length) return;
-      setActiveLink(visible[0].target.id);
-    }, { threshold: [0.35, 0.5, 0.65], rootMargin: '-20% 0px -60% 0px' });
+    function setActiveById(sectionId) {
+      const normalized = sectionId ? `#${sectionId}` : '';
+      for (const link of navLinks) {
+        link.classList.toggle('is-active', link.getAttribute('href') === normalized);
+      }
+    }
 
-    sections.forEach(s => navIO.observe(s));
-  }
+    // Keep underline in sync with clicks / back-forward navigation
+    for (const link of navLinks) {
+      link.addEventListener('click', () => {
+        const href = link.getAttribute('href') || '';
+        if (!href.startsWith('#')) return;
+        const id = decodeURIComponent(href.slice(1));
+        if (id) setActiveById(id);
+      }, { passive: true });
+    }
+    window.addEventListener('hashchange', () => {
+      if (!location.hash.startsWith('#')) return;
+      const id = decodeURIComponent(location.hash.slice(1));
+      if (id) setActiveById(id);
+    }, { passive: true });
 
+    // Initial state (use hash if present)
+    if (location.hash && location.hash.startsWith('#')) {
+      const id = decodeURIComponent(location.hash.slice(1));
+      if (id) setActiveById(id);
+    }
+
+    // Prefer IntersectionObserver for correctness and performance.
+    if (!prefersReducedMotion && 'IntersectionObserver' in window && sections.length) {
+      const io = new IntersectionObserver((entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => (b.intersectionRatio - a.intersectionRatio));
+        if (visible.length) setActiveById(visible[0].target.id);
+      }, {
+        root: null,
+        threshold: [0.22, 0.35, 0.5],
+        // Account for fixed header; bias towards the upper half of the viewport
+        rootMargin: '-96px 0px -55% 0px',
+      });
+
+      sections.forEach((s) => io.observe(s));
+    } else {
+      // Fallback scroll-spy
+      const headerOffset = 110;
+      const onScroll = () => {
+        const y = window.scrollY + headerOffset;
+        let current = '';
+        for (const section of sections) {
+          if (section.offsetTop <= y) current = section.id;
+        }
+        if (current) setActiveById(current);
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    }
+  })();
   // Smooth parallax tick
   function parallaxTick() {
     // ease towards pointer
