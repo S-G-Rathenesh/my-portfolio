@@ -419,7 +419,7 @@
           else if (p.y > state.h + 20) p.y = -20;
         }
       }
-
+      
       function draw() {
         ctx.clearRect(0, 0, state.w, state.h);
 
