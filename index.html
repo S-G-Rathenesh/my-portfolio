@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S G Rathenesh | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  <meta name="description" content="Portfolio of S G Rathenesh - Full Stack, Mobile & AI Developer" />
+</head>
+
+<body>
+  <!-- Floating Top Developer Toolbar (Active in Developer Mode) -->
+  <div id="dev-top-toolbar" class="dev-top-toolbar" aria-hidden="true">
+    <div class="dev-toolbar-brand">
+      <span class="pulse-icon">⚡</span> DEVELOPER VISUAL CMS MODE
+    </div>
+    <div class="dev-toolbar-actions">
+      <button id="dev-btn-add-proj" class="btn secondary-btn small-btn">➕ Add Project</button>
+      <button id="dev-btn-add-cert" class="btn secondary-btn small-btn">📜 Add Cert</button>
+      <button id="dev-btn-add-skill" class="btn secondary-btn small-btn">💡 Add Skill</button>
+      <button id="dev-btn-add-btn" class="btn secondary-btn small-btn">🔗 Add Button</button>
+      <button id="dev-btn-save-local" class="btn secondary-btn small-btn">💾 Save Local</button>
+      <button id="dev-btn-sync-github" class="btn primary-btn small-btn">🚀 Deploy to GitHub</button>
+      <button id="dev-btn-exit" class="btn secondary-btn small-btn">👁️ Exit Dev Mode</button>
+    </div>
+  </div>
+
+  <!-- Notification Toast -->
+  <div id="cms-toast" class="cms-toast" aria-live="polite"></div>
+
+  <!-- Neural AI Preloader Screen -->
+
+  <div id="preloader" aria-label="Loading Portfolio">
+    <div class="preloader-content">
+      <div class="neural-spinner">
+        <div class="spinner-ring ring-1"></div>
+        <div class="spinner-ring ring-2"></div>
+        <div class="spinner-core"></div>
+      </div>
+      <h2 class="preloader-title">S G RATHENESH</h2>
+      <p class="preloader-status" id="loader-status">INITIALIZING NEURAL INTERFACE...</p>
+      <div class="preloader-bar-container">
+        <div class="preloader-bar" id="loader-bar"></div>
+      </div>
+      <div class="preloader-counter" id="loader-counter">0%</div>
+      <button id="preloader-skip-btn" class="btn primary-btn preloader-launch-btn">LAUNCH SYSTEM &rarr;</button>
+    </div>
+  </div>
+
+  <canvas id="neural-constellation" aria-hidden="true"></canvas>
+  <header class="site-header">
+    <div class="container header-flex">
+      <h1 class="logo">PORTFOLIO</h1>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#internship">Internship</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero animated-gradient">
+      <div class="hero-bg-anim"></div>
+      <div class="container hero-flex fade-in">
+        <div class="hero-text">
+          <h2>Hi, I'm <span class="highlight">S G Rathenesh</span></h2>
+          <p class="hero-subtitle">Computer Science Engineering Student | Full Stack & AI Developer</p>
+          <p class="hero-desc">
+            Aspiring Software Engineer with hands-on experience in Full Stack Web Development, Mobile Application
+            Development, and Artificial Intelligence using React, FastAPI, Flutter, Firebase, and Python.
+          </p>
+          <div class="hero-contact">
+            <a href="tel:+919342616608" class="contact-link">+91 9342616608</a>
+            <span class="separator">•</span>
+            <a href="mailto:ratheneshsg@gmail.com" class="contact-link">ratheneshsg@gmail.com</a>
+            <span class="separator">•</span>
+            <span class="contact-link">Karur, Tamil Nadu</span>
+          </div>
+          <div class="hero-social">
+            <a href="https://github.com/S-G-Rathenesh" target="_blank" rel="noopener" aria-label="GitHub"
+              class="btn social-btn">GitHub</a>
+            <a href="https://www.linkedin.com/in/rathenesh-s-g" target="_blank" rel="noopener" aria-label="LinkedIn"
+              class="btn social-btn">LinkedIn</a>
+          </div>
+          <div class="hero-actions">
+            <a href="#projects" class="btn primary-btn">View Projects</a>
+            <a href="resume.pdf" class="btn secondary-btn" download>Download Resume</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="cyber-avatar-frame">
+            <div class="cyber-hud-ring outer-ring"></div>
+            <div class="cyber-hud-ring inner-ring"></div>
+            <div class="cyber-scanline"></div>
+            <img src="images/me.png" alt="Photo of S G Rathenesh" class="profile-img" />
+            <div class="cyber-bracket bracket-tl"></div>
+            <div class="cyber-bracket bracket-tr"></div>
+            <div class="cyber-bracket bracket-bl"></div>
+            <div class="cyber-bracket bracket-br"></div>
+            <div class="cyber-status-badge">
+              <span class="status-dot"></span> SYSTEM ONLINE // AI READY
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="about" class="section fade-in">
+      <div class="container">
+        <div class="section-card">
+          <h2>About Me</h2>
+          <div class="about-grid">
+            <div>
+              <h3>Education</h3>
+              <p>
+                <b>Bachelor of Engineering in Computer Science and Engineering</b><br>
+                M. Kumarasamy College of Engineering (2023 – 2027)<br>
+                <b>CGPA: 7.39</b> (Till 6<sup>th</sup> Semester)
+              </p>
+              <p>
+                <b>Higher Secondary Certificate (HSC)</b><br>
+                Karur Saraswathi Vidhiyalaya Hr. Sec. School (2022 – 2023)<br>
+                <b>Percentage: 84.33%</b>
+              </p>
+
+              <h3>Core Development Stack</h3>
+              <div class="tech-stack-box">
+                <div class="core-tech">
+                  <div class="core-item">
+                    <i class="devicon-react-original colored" aria-hidden="true"></i>
+                    <span>React</span>
+                  </div>
+                  <div class="core-item">
+                    <i class="devicon-fastapi-plain colored" aria-hidden="true"></i>
+                    <span>FastAPI</span>
+                  </div>
+                  <div class="core-item">
+                    <i class="devicon-flutter-plain colored" aria-hidden="true"></i>
+                    <span>Flutter</span>
+                  </div>
+                  <div class="core-item">
+                    <i class="devicon-python-plain colored" aria-hidden="true"></i>
+                    <span>Python</span>
+                  </div>
+                  <div class="core-item">
+                    <i class="devicon-firebase-plain colored" aria-hidden="true"></i>
+                    <span>Firebase</span>
+                  </div>
+                </div>
+              </div>
+
+              <h3>Languages</h3>
+              <ul class="skills">
+                <li>Tamil</li>
+                <li>English</li>
+              </ul>
+
+              <h3>Areas of Interest</h3>
+              <ul class="skills">
+                <li>Full Stack Web Development</li>
+                <li>Mobile Application Development</li>
+                <li>Artificial Intelligence & Machine Learning</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3>Technical Skills</h3>
+
+              <div class="skills-group">
+                <div class="skill-cat-title">Programming Languages</div>
+                <ul class="skills">
+                  <li><i class="devicon-python-plain colored skill-icon" aria-hidden="true"></i><span>Python</span></li>
+                  <li><i class="devicon-java-plain colored skill-icon" aria-hidden="true"></i><span>Java</span></li>
+                  <li><i class="devicon-c-plain colored skill-icon" aria-hidden="true"></i><span>C</span></li>
+                  <li><i class="devicon-csharp-plain colored skill-icon" aria-hidden="true"></i><span>C#</span></li>
+                  <li><i class="devicon-javascript-plain colored skill-icon"
+                      aria-hidden="true"></i><span>JavaScript</span></li>
+                </ul>
+              </div>
+
+              <div class="skills-group">
+                <div class="skill-cat-title">Frontend</div>
+                <ul class="skills">
+                  <li><i class="devicon-react-original colored skill-icon" aria-hidden="true"></i><span>React</span>
+                  </li>
+                  <li><i class="devicon-html5-plain colored skill-icon" aria-hidden="true"></i><span>HTML5</span></li>
+                  <li><i class="devicon-css3-plain colored skill-icon" aria-hidden="true"></i><span>CSS3</span></li>
+                </ul>
+              </div>
+
+              <div class="skills-group">
+                <div class="skill-cat-title">Backend</div>
+                <ul class="skills">
+                  <li><i class="devicon-fastapi-plain colored skill-icon" aria-hidden="true"></i><span>FastAPI</span>
+                  </li>
+                  <li><i class="devicon-php-plain colored skill-icon" aria-hidden="true"></i><span>PHP</span></li>
+                  <li><span>REST APIs</span></li>
+                </ul>
+              </div>
+
+              <div class="skills-group">
+                <div class="skill-cat-title">Mobile Development</div>
+                <ul class="skills">
+                  <li><i class="devicon-flutter-plain colored skill-icon" aria-hidden="true"></i><span>Flutter</span>
+                  </li>
+                  <li><i class="devicon-react-original colored skill-icon" aria-hidden="true"></i><span>React
+                      Native</span></li>
+                </ul>
+              </div>
+
+              <div class="skills-group">
+                <div class="skill-cat-title">Databases</div>
+                <ul class="skills">
+                  <li><i class="devicon-mongodb-plain colored skill-icon" aria-hidden="true"></i><span>MongoDB</span>
+                  </li>
+                  <li><i class="devicon-mysql-original colored skill-icon" aria-hidden="true"></i><span>MySQL</span>
+                  </li>
+                  <li><i class="devicon-sqlite-plain colored skill-icon" aria-hidden="true"></i><span>SQLite</span></li>
+                </ul>
+              </div>
+
+              <div class="skills-group">
+                <div class="skill-cat-title">AI & Machine Learning</div>
+                <ul class="skills">
+                  <li><span>Machine Learning</span></li>
+                  <li><i class="devicon-tensorflow-line colored skill-icon" aria-hidden="true"></i><span>TensorFlow
+                      Lite</span></li>
+                  <li><span>AI Integration</span></li>
+                </ul>
+              </div>
+
+              <div class="skills-group">
+                <div class="skill-cat-title">Tools & Platforms</div>
+                <ul class="skills">
+                  <li><i class="devicon-git-plain colored skill-icon" aria-hidden="true"></i><span>Git</span></li>
+                  <li><i class="devicon-github-original colored skill-icon" aria-hidden="true"></i><span>GitHub</span>
+                  </li>
+                  <li><i class="devicon-firebase-plain colored skill-icon" aria-hidden="true"></i><span>Firebase</span>
+                  </li>
+                  <li><i class="devicon-vscode-plain colored skill-icon" aria-hidden="true"></i><span>VS Code</span>
+                  </li>
+                  <li><i class="devicon-unity-original colored skill-icon" aria-hidden="true"></i><span>Unity</span>
+                  </li>
+                  <li><i class="devicon-figma-plain colored skill-icon" aria-hidden="true"></i><span>Figma</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section alt fade-in">
+      <div class="container">
+        <div class="section-card">
+          <h2>Projects</h2>
+          <div class="project-grid">
+
+            <div class="project-card featured-project">
+              <span class="project-badge ai">⭐ Featured Project</span>
+              <h3>SpendGuard — AI Personal Finance Manager</h3>
+              <div class="project-tech-icons" aria-label="Technologies used">
+                <i class="devicon-react-original colored" aria-hidden="true"></i>
+                <i class="devicon-sqlite-plain colored" aria-hidden="true"></i>
+                <i class="devicon-firebase-plain colored" aria-hidden="true"></i>
+                <i class="devicon-tensorflow-line colored" aria-hidden="true"></i>
+              </div>
+              <span class="ai-indicator">Mobile & AI Powered</span>
+              <p class="small"><b>Tech:</b> React Native, TypeScript, SQLite, Firebase Auth, TensorFlow Lite, Android
+                SMS API</p>
+              <ul class="project-bullet-list">
+                <li>Offline-first personal finance app extracting & categorizing transactions automatically from banking
+                  SMS.</li>
+                <li>Integrated AI-based scam & spoofed SMS detection to enhance security and fraud awareness.</li>
+                <li>Designed spending analytics, budgeting insights, and duplicate transaction detection.</li>
+              </ul>
+              <a href="https://github.com/S-G-Rathenesh/SpendGuard" class="btn" target="_blank" rel="noopener">View
+                Source Code</a>
+            </div>
+
+            <div class="project-card featured-project">
+              <span class="project-badge ai">⭐ Featured Project</span>
+              <h3>AI-Powered Resume & Portfolio Builder</h3>
+              <div class="project-tech-icons" aria-label="Technologies used">
+                <i class="devicon-react-original colored" aria-hidden="true"></i>
+                <i class="devicon-fastapi-plain colored" aria-hidden="true"></i>
+                <i class="devicon-mongodb-plain colored" aria-hidden="true"></i>
+                <i class="devicon-python-plain colored" aria-hidden="true"></i>
+              </div>
+              <span class="ai-indicator">Full Stack & AI</span>
+              <p class="small"><b>Tech:</b> React, FastAPI, MongoDB, Python, AI APIs</p>
+              <ul class="project-bullet-list">
+                <li>AI-powered platform to generate professional resumes and portfolio websites with real-time preview.
+                </li>
+                <li>Implemented AI-assisted content enhancement and automated resume generation workflows.</li>
+                <li>Supported multi-format export (PDF, Word, HTML) with responsive UI design.</li>
+              </ul>
+              <a href="https://github.com/S-G-Rathenesh/AI-Enabled-Resume-Portfolio-Builder" class="btn" target="_blank"
+                rel="noopener">View Source Code</a>
+            </div>
+
+            <div class="project-card">
+              <h3>VibeSync — Watch Together Platform</h3>
+              <div class="project-tech-icons" aria-label="Technologies used">
+                <i class="devicon-flutter-plain colored" aria-hidden="true"></i>
+                <i class="devicon-firebase-plain colored" aria-hidden="true"></i>
+              </div>
+              <p class="small"><b>Tech:</b> Flutter, Firebase, Cloud Firestore</p>
+              <ul class="project-bullet-list">
+                <li>Synchronized video streaming application enabling real-time co-watching for multiple users.</li>
+                <li>Implemented shared playback controls and room synchronization for seamless collaboration.</li>
+                <li>Optimized performance for smooth synchronization on low-bandwidth networks.</li>
+              </ul>
+              <a href="https://github.com/S-G-Rathenesh/VibeSync" class="btn" target="_blank" rel="noopener">View Source
+                Code</a>
+            </div>
+
+            <div class="project-card">
+              <h3>Wake-up Darling</h3>
+              <div class="project-tech-icons" aria-label="Technologies used">
+                <i class="devicon-flutter-plain colored" aria-hidden="true"></i>
+                <i class="devicon-sqlite-plain colored" aria-hidden="true"></i>
+              </div>
+              <p class="small"><b>Tech:</b> Flutter, SQLite</p>
+              <ul class="project-bullet-list">
+                <li>Smart alarm application with personalized reminders and customizable wake-up schedules.</li>
+                <li>Designed intuitive mobile interface focused on productivity and ease of use.</li>
+                <li>Implemented reminder management features to improve daily task organization.</li>
+              </ul>
+              <a href="https://github.com/S-G-Rathenesh/Wake-up-Darling" class="btn" target="_blank" rel="noopener">View
+                Source Code</a>
+            </div>
+
+            <div class="project-card">
+              <h3>Inventory Management System</h3>
+              <div class="project-tech-icons" aria-label="Technologies used">
+                <i class="devicon-html5-plain colored" aria-hidden="true"></i>
+                <i class="devicon-css3-plain colored" aria-hidden="true"></i>
+                <i class="devicon-php-plain colored" aria-hidden="true"></i>
+                <i class="devicon-mysql-original colored" aria-hidden="true"></i>
+              </div>
+              <p class="small"><b>Tech:</b> HTML, CSS, PHP, MySQL, XAMPP</p>
+              <p class="project-impact">📈 Reduced manual stock tracking effort by 60% and automated inventory updates.
+              </p>
+              <a href="https://github.com/S-G-Rathenesh/INVENTORY-MANAGEMENT-SYSTEM" class="btn" target="_blank"
+                rel="noopener">View Source Code</a>
+            </div>
+
+            <div class="project-card">
+              <h3>FillPill: Smart Medication Reminder</h3>
+              <div class="project-tech-icons" aria-label="Technologies used">
+                <i class="devicon-arduino-plain colored" aria-hidden="true"></i>
+              </div>
+              <p class="small"><b>Tech:</b> Arduino C++ Hardware</p>
+              <p class="small">Smart medicine reminder system using Arduino, LCD, buzzer, LEDs, and GSM for SMS
+                notifications.</p>
+              <a href="https://github.com/S-G-Rathenesh/FillPill" class="btn" target="_blank" rel="noopener">View Source
+                Code</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="internship" class="section fade-in">
+      <div class="container">
+        <div class="section-card">
+          <h2>Professional Experience</h2>
+          <div class="internship-wrapper">
+
+            <div class="intern-card ongoing-intern">
+              <span class="intern-corner-badge">Feb 2026 – Aug 2026</span>
+              <h3>Frontend Developer Intern</h3>
+              <p><strong>MoviCloud Labs Pvt. Ltd.</strong></p>
+              <p class="small"><b>Tools & Tech:</b> React, REST APIs, Git, Figma</p>
+              <ul class="intern-bullet-list">
+                <li>Developed responsive user interfaces using React for production-ready web applications.</li>
+                <li>Integrated frontend components with REST APIs to deliver dynamic application features.</li>
+                <li>Collaborated with backend developers to implement scalable and maintainable solutions.</li>
+                <li>Optimized reusable UI components, improving development efficiency and consistency.</li>
+                <li>Participated in debugging, testing, code reviews, and deployment activities throughout the software
+                  lifecycle.</li>
+              </ul>
+            </div>
+
+            <div class="intern-card">
+              <span class="intern-corner-badge">Jun 2025 – Jul 2025</span>
+              <h3>Machine Learning Intern</h3>
+              <p><strong>HDLC Technologies Pvt. Ltd.</strong></p>
+              <p class="small"><b>Tools & Tech:</b> Python, Machine Learning, Jupyter Notebook, Google Colab</p>
+              <ul class="intern-bullet-list">
+                <li>Developed a House Price Prediction model using Python and Machine Learning techniques.</li>
+                <li>Evaluated regression models to improve prediction accuracy and model performance.</li>
+                <li>Gained practical experience in the Machine Learning development workflow.</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications" class="section alt fade-in">
+      <div class="container">
+        <div class="section-card">
+          <h2>Certifications & Achievements</h2>
+          <ul class="cert-list">
+            <li>
+              <span>NPTEL – Introduction to Industry 4.0 and Industrial Internet of Things</span>
+              <a class="btn" href="NPTEL%20%28IOT%29.pdf" target="_blank" rel="noopener">View Certificate</a>
+            </li>
+            <li>
+              <span>NPTEL – Human Computer Interaction</span>
+              <a class="btn" href="NPTEL-HCI%20Certificate.pdf" target="_blank" rel="noopener">View Certificate</a>
+            </li>
+
+            <li>
+              <span>Introduction to Basic Game Development</span>
+              <a class="btn" href="Coursera%28Introduction%20to%20Basic%20Game%20Development%29.pdf" target="_blank"
+                rel="noopener">View Certificate</a>
+            </li>
+            <li>
+              <span>Build a Full Website using WordPress Workshop</span>
+              <a class="btn" href="Coursera%20%28Build%20Website%20using%20Wordpress%29.pdf" target="_blank"
+                rel="noopener">View Certificate</a>
+            </li>
+            <li>
+              <span>Flutter App Development Workshop (Kongu Engineering College)</span>
+              <a class="btn" href="Flutter%20app%20development%20workshop%20.pdf" target="_blank" rel="noopener">View
+                Certificate</a>
+            </li>
+            <li>
+              <span>Kalam Awards 2025 (Participation)</span>
+              <a class="btn" href="Kalam%20awards%202025%20Participation.pdf" target="_blank" rel="noopener">View
+                Certificate</a>
+            </li>
+            <li>
+              <span>English Typewriting (Junior)</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section fade-in">
+      <div class="container">
+        <div class="section-card">
+          <h2>Contact</h2>
+          <p>Want to work together or ask something? Reach out!</p>
+          <form id="contact-form" action="https://formspree.io/f/xanblvav" method="POST">
+            <div class="form-row">
+              <input type="text" name="name" placeholder="Your name" required />
+              <input type="email" name="email" placeholder="Your email" required />
+            </div>
+            <textarea name="message" rows="5" placeholder="Message" required></textarea>
+            <button type="submit" class="btn primary-btn">Send</button>
+          </form>
+          <p class="small">Or email me directly at <a href="mailto:ratheneshsg@gmail.com">ratheneshsg@gmail.com</a> |
+            Call: <a href="tel:+919342616608">+91 9342616608</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer fade-in">
+    <div class="container footer-flex">
+      <p>&copy; <span id="year"></span> S G Rathenesh. Built with HTML, CSS & JavaScript.</p>
+    </div>
+  </footer>
+
+  <!-- Secret PIN Verification Modal -->
+  <div id="secret-pin-modal" class="admin-modal-overlay" aria-hidden="true">
+    <div class="admin-modal-card pin-modal-card">
+      <button class="modal-close-btn" id="pin-modal-close">&times;</button>
+      <div class="omnitrix-icon-mini">⚡</div>
+      <h3>SECURITY CLEARANCE REQUIRED</h3>
+      <p class="small">Enter 4-Digit Developer Access PIN (Ctrl + X)</p>
+
+      <div class="pin-display">
+        <span class="pin-dot" id="pin-dot-1"></span>
+        <span class="pin-dot" id="pin-dot-2"></span>
+        <span class="pin-dot" id="pin-dot-3"></span>
+        <span class="pin-dot" id="pin-dot-4"></span>
+      </div>
+      <div class="pin-keypad">
+        <button class="keypad-btn" data-key="1">1</button>
+        <button class="keypad-btn" data-key="2">2</button>
+        <button class="keypad-btn" data-key="3">3</button>
+        <button class="keypad-btn" data-key="4">4</button>
+        <button class="keypad-btn" data-key="5">5</button>
+        <button class="keypad-btn" data-key="6">6</button>
+        <button class="keypad-btn" data-key="7">7</button>
+        <button class="keypad-btn" data-key="8">8</button>
+        <button class="keypad-btn" data-key="9">9</button>
+        <button class="keypad-btn action-key" data-key="clear">C</button>
+        <button class="keypad-btn" data-key="0">0</button>
+        <button class="keypad-btn action-key" data-key="back">&larr;</button>
+      </div>
+      <p id="pin-error-msg" class="pin-error"></p>
+    </div>
+  </div>
+
+
+  <!-- Neural Core Developer Override Screen -->
+  <div id="omnitrix-overlay" class="omnitrix-fullscreen" aria-hidden="true">
+    <div class="omnitrix-container">
+      <div class="omnitrix-bezel">
+        <div class="omnitrix-dial">
+          <div class="omnitrix-core-glass">
+            <div class="omnitrix-hourglass"></div>
+            <div class="alien-silhouette">⚡</div>
+          </div>
+        </div>
+        <div class="omnitrix-ring-outer"></div>
+      </div>
+      <h2 class="omnitrix-title">NEURAL CORE OVERRIDE</h2>
+      <p class="omnitrix-subtitle">INITIALIZING FULL STACK &amp; AI DEVELOPER SUITE...</p>
+    </div>
+  </div>
+
+
+  <!-- Developer Admin Suite Drawer -->
+  <div id="dev-admin-panel" class="admin-drawer" aria-hidden="true">
+    <div class="admin-drawer-header">
+      <div class="admin-title-badge">
+        <span class="omnitrix-badge-icon">🟢</span> DEVELOPER CONTROL CENTER
+      </div>
+      <button id="dev-panel-close" class="btn secondary-btn small-btn">Exit Dev Mode &times;</button>
+    </div>
+
+    <div class="admin-drawer-body">
+      <div class="admin-tabs">
+        <button class="admin-tab-btn active" data-tab="tab-project">+ Add Project</button>
+        <button class="admin-tab-btn" data-tab="tab-cert">+ Add Certificate</button>
+        <button class="admin-tab-btn" data-tab="tab-profile">Edit Info</button>
+        <button class="admin-tab-btn" data-tab="tab-github">🚀 GitHub Sync</button>
+      </div>
+
+      <!-- Tab 1: Add Project -->
+      <div id="tab-project" class="admin-tab-content active">
+        <h4>Add New Portfolio Project</h4>
+        <form id="admin-add-project-form">
+          <input type="text" id="dev-proj-title" placeholder="Project Title (e.g. AI Vision Bot)" required />
+          <input type="text" id="dev-proj-tech" placeholder="Technologies (e.g. React, FastAPI, Python)" required />
+          <input type="url" id="dev-proj-url" placeholder="GitHub Repository URL" required />
+          <textarea id="dev-proj-desc" rows="3" placeholder="Key achievements or bullet points..." required></textarea>
+          <label class="admin-checkbox-label">
+            <input type="checkbox" id="dev-proj-featured" /> Mark as ⭐ Featured Project
+          </label>
+          <button type="submit" class="btn primary-btn full-btn">Add Project to Live Portfolio</button>
+        </form>
+      </div>
+
+      <!-- Tab 2: Add Certificate -->
+      <div id="tab-cert" class="admin-tab-content">
+        <h4>Add New Certificate</h4>
+        <form id="admin-add-cert-form">
+          <input type="text" id="dev-cert-title" placeholder="Certificate Title (e.g. AWS Certified Developer)" required />
+          <input type="text" id="dev-cert-pdf" placeholder="PDF Filename / Link (e.g. aws-cert.pdf)" required />
+          <button type="submit" class="btn primary-btn full-btn">Add Certificate to Live Portfolio</button>
+        </form>
+      </div>
+
+      <!-- Tab 3: Edit Profile Info -->
+      <div id="tab-profile" class="admin-tab-content">
+        <h4>Update Hero & Bio Info</h4>
+        <form id="admin-edit-profile-form">
+          <input type="text" id="dev-bio-name" placeholder="Full Name" value="S G Rathenesh" required />
+          <input type="text" id="dev-bio-subtitle" placeholder="Hero Subtitle" value="Computer Science Engineering Student | Full Stack & AI Developer" required />
+          <input type="text" id="dev-bio-cgpa" placeholder="CGPA" value="7.39" required />
+          <button type="submit" class="btn primary-btn full-btn">Update Profile Info</button>
+        </form>
+      </div>
+
+      <!-- Tab 4: GitHub Auto-Sync -->
+      <div id="tab-github" class="admin-tab-content">
+        <h4>GitHub Auto-Commit & Deploy</h4>
+        <p class="small">Sync your local changes directly to your GitHub repository!</p>
+        <form id="admin-github-sync-form">
+          <input type="text" id="dev-gh-repo" placeholder="GitHub Repository (e.g. S-G-Rathenesh/my-portfolio)" value="S-G-Rathenesh/my-portfolio" required />
+          <input type="password" id="dev-gh-token" placeholder="GitHub Personal Access Token (PAT)" value="" />
+
+          <div class="admin-btn-group">
+            <button type="submit" class="btn primary-btn">🚀 Commit & Deploy to GitHub</button>
+            <button type="button" id="dev-download-html" class="btn secondary-btn">📥 Download Updated index.html</button>
+          </div>
+        </form>
+        <div id="github-sync-status" class="small sync-status-msg"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+
+</html>
