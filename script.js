@@ -1165,13 +1165,17 @@
       }
       let token = localStorage.getItem('gh_pat_token') || '';
       if (!token) {
-        token = prompt('Enter your GitHub Personal Access Token (PAT) with "repo" write access for 1-click deploy:') || '';
-        if (token) localStorage.setItem('gh_pat_token', token.trim());
+        token = prompt('Enter your GitHub Personal Access Token (PAT) with "repo" or "Contents: Read & Write" permissions for 1-click deploy:') || '';
+        if (token) {
+          token = token.trim().replace(/^["']|["']$/g, '');
+          localStorage.setItem('gh_pat_token', token);
+        }
       }
-      return token.trim();
+      return (token || '').trim().replace(/^["']|["']$/g, '');
     }
 
     async function syncAndDeployToGithub(e) {
+      if (e) e.preventDefault();
       const isShift = e && e.shiftKey;
       const patToken = getPatToken(isShift);
       if (!patToken) {
@@ -1253,17 +1257,23 @@
           throw new Error(errJson.message || `Push failed (HTTP ${putRes.status})`);
         }
       } catch (err) {
-        if (err.message && (err.message.includes('Resource not accessible') || err.message.includes('Bad credentials') || err.message.includes('403') || err.message.includes('401'))) {
+        const errMsg = err.message || '';
+        if (errMsg.includes('Resource not accessible') || errMsg.includes('Bad credentials') || errMsg.includes('403') || errMsg.includes('401')) {
           localStorage.removeItem('gh_pat_token');
-          showToast(`❌ PAT Token Error: ${err.message}. Token cleared! Click Deploy again to enter a PAT with 'repo' write access.`);
+          showToast(`❌ Token Error: ${errMsg}. Saved PAT cleared! Click Deploy again to enter a token with 'repo' write access.`);
         } else {
-          showToast(`❌ GitHub Deploy Failed: ${err.message}`);
+          showToast(`❌ GitHub Deploy Failed: ${errMsg}`);
         }
       }
     }
 
     if (btnSyncGithub) {
       btnSyncGithub.addEventListener('click', syncAndDeployToGithub);
+      btnSyncGithub.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+        localStorage.removeItem('gh_pat_token');
+        showToast('🔑 PAT Token cleared! Click Deploy to enter a new GitHub Personal Access Token.');
+      });
     }
   })();
 })();
