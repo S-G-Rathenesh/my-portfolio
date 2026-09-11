@@ -1159,17 +1159,21 @@
     // 4. GitHub Auto-Commit & Deploy
     const repoPath = "S-G-Rathenesh/my-portfolio";
 
-    function getPatToken() {
+    function getPatToken(forceReset = false) {
+      if (forceReset) {
+        localStorage.removeItem('gh_pat_token');
+      }
       let token = localStorage.getItem('gh_pat_token') || '';
       if (!token) {
-        token = prompt('Enter your GitHub Personal Access Token (PAT) for 1-click deploy:') || '';
-        if (token) localStorage.setItem('gh_pat_token', token);
+        token = prompt('Enter your GitHub Personal Access Token (PAT) with "repo" write access for 1-click deploy:') || '';
+        if (token) localStorage.setItem('gh_pat_token', token.trim());
       }
-      return token;
+      return token.trim();
     }
 
-    async function syncAndDeployToGithub() {
-      const patToken = getPatToken();
+    async function syncAndDeployToGithub(e) {
+      const isShift = e && e.shiftKey;
+      const patToken = getPatToken(isShift);
       if (!patToken) {
         showToast('❌ GitHub Deploy Cancelled: No PAT token provided.');
         return;
@@ -1249,7 +1253,12 @@
           throw new Error(errJson.message || `Push failed (HTTP ${putRes.status})`);
         }
       } catch (err) {
-        showToast(`❌ GitHub Deploy Failed: ${err.message}`);
+        if (err.message && (err.message.includes('Resource not accessible') || err.message.includes('Bad credentials') || err.message.includes('403') || err.message.includes('401'))) {
+          localStorage.removeItem('gh_pat_token');
+          showToast(`❌ PAT Token Error: ${err.message}. Token cleared! Click Deploy again to enter a PAT with 'repo' write access.`);
+        } else {
+          showToast(`❌ GitHub Deploy Failed: ${err.message}`);
+        }
       }
     }
 
